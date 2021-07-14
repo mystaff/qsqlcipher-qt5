@@ -28,12 +28,12 @@ else:win32 {
 }
 else:macx {
     LIBS += \
-        -L$$PWD/../../dependencies/external/openssl/artifacts/release \
+        -L$$PWD/../../../../openssl/artifacts/release \
         -lssl \
         -lcrypto \
         -lz
 
-    INCLUDEPATH +=$$PWD/../../dependencies/external/openssl/artifacts/release/include
+    INCLUDEPATH +=$$PWD/../../../../openssl/artifacts/release/include
     QMAKE_LFLAGS += -isysroot $$QMAKE_MAC_SDK_PATH
     QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.13
 
