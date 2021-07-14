@@ -58,18 +58,19 @@ DEFINES += \
     SQLITE_ENABLE_JSON1 \
     SQLITE_ENABLE_COLUMN_METADATA
 
-INCLUDEPATH += $$PWD qsqlcipher
-HEADERS += qsqlcipher/qsql_sqlite_p.h
-SOURCES += qsqlcipher/qsql_sqlite.cpp qsqlcipher/smain.cpp
+INCLUDEPATH += $$PWD
+HEADERS += $$PWD/qsql_sqlite_p.h
+SOURCES += $$PWD/qsql_sqlite.cpp $$PWD/smain.cpp
 
-INCLUDEPATH +=  sqlcipher
-HEADERS +=      sqlcipher/sqlite3.h
-SOURCES +=      sqlcipher/sqlite3.c
+INCLUDEPATH +=  $$PWD/../3rdparty/sqlcipher
+HEADERS +=      $$PWD/../3rdparty/sqlcipher/sqlite3.h
+SOURCES +=      $$PWD/../3rdparty/sqlcipher/sqlite3.c
 
-OTHER_FILES += qsqlcipher/sqlcipher.json qsqlcipher/.qmake.conf
+OTHER_FILES += sqlcipher.json .qmake.conf
 
 unix:!macx {
     # install
     target.path = $$[QT_INSTALL_PLUGINS]
     INSTALLS += target
 }
+
