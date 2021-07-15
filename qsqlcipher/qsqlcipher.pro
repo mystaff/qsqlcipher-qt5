@@ -3,13 +3,12 @@ TARGET = qsqlcipher
 
 CONFIG(release, debug|release): DEFINES *= NDEBUG
 win32 {
-    CONFIG(release, debug|release): DESTDIR = release/sqldrivers
-    else:CONFIG(debug, debug|release): DESTDIR = debug/sqldrivers
     # Produce full-symbolic debugging information in qsqlcipher.pdb file
     QMAKE_CXXFLAGS_RELEASE += /Zi
     QMAKE_LFLAGS_RELEASE += /DEBUG
 }
-else:DESTDIR = sqldrivers
+
+DESTDIR = sqldrivers
 
 unix:!macx {
     CONFIG += link_pkgconfig
